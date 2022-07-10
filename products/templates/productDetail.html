@@ -1,0 +1,17 @@
+ {% extends 'index.html' %} {% block content %}
+<div class="container row justify-content-center">
+    <div class="card-body">
+        <a href="{% url 'home' %}" class="btn btn-primary mt-2">Back</a>
+        <img src="{{ eachProduct.image.url }}" class="card-img-top" alt="...">
+        <h5 class="card-title"> {{ eachProduct.name }} </h5>
+        <h4 class="card-title"> {{ eachProduct.price }} </h4>
+
+        <p class="card-text">{{ eachProduct.description }}</p>
+        <p class="card-text">{{ eachProduct.created_at }}</p>
+        <a href="#">Delete it</a>
+        <a href="#">Update it</a>
+
+        <!-- <a href="#" class="btn btn-primary">Detail</a> -->
+    </div>
+</div>
+{% endblock %}

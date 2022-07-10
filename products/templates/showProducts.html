@@ -1,0 +1,19 @@
+ {% extends 'index.html' %} {% block content %} {% if products %} {% for product in products %}
+<div class="card" style="width: 18rem;">
+    <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+    <div class="container row justify-content-center">
+        <div class="card-body">
+            <h5 class="card-title"> {{ product.name }} </h5>
+            <h4 class="card-title"> {{ product.price }} </h4>
+
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">{{ product.created_at }}</p>
+
+            <a href="{% url 'productDetail' pk %}" class="btn btn-primary">Detail</a>
+        </div>
+    </div>
+
+</div>
+{% endfor %} {% else %}
+<p>no products</p>
+{% endif %} {% endblock %}
